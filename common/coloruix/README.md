@@ -323,7 +323,7 @@ css: {
 <text class="text-right">右对齐</text>
 <text class="text-justify">两端对齐（长文本段落）</text>
 <text class="text-bold">加粗</text>
-<text class="text-cut">超长文本自动省略号超长文本自动省略号…</text>
+<view class="text-cut">超长文本自动省略号超长文本自动省略号…（text-cut 用于块级容器 view，text 是 inline 元素不生效）</view>
 <text class="text-price">¥99.00（价格样式）</text>
 <text class="text-shadow">带阴影文字</text>
 ```

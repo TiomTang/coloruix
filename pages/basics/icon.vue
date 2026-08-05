@@ -10,7 +10,7 @@
 			<view class="padding-xs" v-for="(item, index) in IconList" :key="index">
 				<view class="cu-item flex-col align-center padding-xs text-df">
 					<text class="cuIcon text-black" :class="'cuIcon-' + item.name"></text>
-					<text class="text-xs text-hint text-cut margin-top-xs">{{ item.name }}</text>
+					<text class="text-xs text-hint margin-top-xs">{{ item.name }}</text>
 				</view>
 			</view>
 		</view>

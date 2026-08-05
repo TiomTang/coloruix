@@ -42,21 +42,49 @@
 		</view>
 		<view class="bg-white padding">
 			<view class="flex align-center solid-bottom padding-tb-xs">
-				<view class="w-md"><text class="text-cut">次日到期</text></view>
+				<view class="w-md text-cut">次日到期</view>
 				<text class="flex-sub">剩余 2 天</text>
 				<text class="cuIcon-right text-grey"></text>
 			</view>
 			<view class="flex align-center solid-bottom padding-tb-xs">
-				<view class="w-md"><text class="text-cut">5天到期</text></view>
+				<view class="w-md text-cut">5天到期</view>
 				<text class="flex-sub">剩余 5 天</text>
 				<text class="cuIcon-right text-grey"></text>
 			</view>
 			<view class="flex align-center padding-tb-xs">
-				<view class="w-md"><text class="text-cut">本月已逾期 12 天，请尽快处理</text></view>
+				<view class="w-md text-cut">本月已逾期 12 天，请尽快处理</view>
 				<text class="flex-sub">已逾期</text>
 				<text class="cuIcon-right text-grey"></text>
 			</view>
-			<view class="text-hint text-xs margin-top-xs">w-md 固定 160rpx：左侧文字长短不一（含超长省略）时，右侧值列与箭头依然对齐。定宽类自带 flex-shrink:0，超宽配 text-cut。</view>
+			<view class="text-hint text-xs margin-top-xs">w-md 固定 160rpx：左侧文字长短不一（含超长省略）时，右侧值列与箭头依然对齐。text-cut 需加在块级容器（view）上，加在 text（inline）上不生效。</view>
+		</view>
+
+		<!-- ======== 定宽组合（w-xs~w-xl 多档位） ======== -->
+		<view class="cu-bar bg-white solid-bottom margin-top">
+			<view class="action">
+				<text class="cuIcon-title text-brand"></text>定宽组合（多档位，X 新增）
+			</view>
+		</view>
+		<view class="bg-white padding">
+			<view class="flex align-center solid-bottom padding-tb-xs">
+				<view class="w-xs text-center text-grey">#1</view>
+				<view class="w-lg text-cut">水电费-2026年8月账期</view>
+				<view class="w-md text-right">¥ 1,234.50</view>
+				<view class="w-sm text-right"><text class="text-expense">已逾期</text></view>
+			</view>
+			<view class="flex align-center solid-bottom padding-tb-xs">
+				<view class="w-xs text-center text-grey">#2</view>
+				<view class="w-lg text-cut">物业费-全年一次性缴纳</view>
+				<view class="w-md text-right">¥ 88.00</view>
+				<view class="w-sm text-right"><text class="text-income">已结清</text></view>
+			</view>
+			<view class="flex align-center padding-tb-xs">
+				<view class="w-xs text-center text-grey">#3</view>
+				<view class="w-lg text-cut">网络费-12个月合约机套餐包含基础宽带与电视</view>
+				<view class="w-md text-right">¥ 199.00</view>
+				<view class="w-sm text-right"><text class="text-warning">待处理</text></view>
+			</view>
+			<view class="text-hint text-xs margin-top-xs">w-xs 96 + w-lg 224 + w-md 160 + w-sm 128：四列各定宽（名称超长省略、金额/状态右对齐），行间严格对齐</view>
 		</view>
 
 		<!-- ======== 比例布局 ======== -->

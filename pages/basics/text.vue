@@ -139,21 +139,21 @@
 			</view>
 		</view>
 		<view class="cu-card padding">
-			<view class="flex gap-lg align-center">
-				<view class="flex-col">
+			<view class="flex flex-col">
+				<view class="flex justify-between align-center solid-bottom padding-tb-xs">
 					<text>{{ numFw('5天到期') }}</text>
-					<text class="text-hint text-xs">numFw 全角（与纯汉字对齐）</text>
+					<text class="text-hint text-xs">numFw 全角</text>
 				</view>
-				<view class="flex-col">
+				<view class="flex justify-between align-center solid-bottom padding-tb-xs">
 					<text>次日到期</text>
 					<text class="text-hint text-xs">纯汉字参照</text>
 				</view>
-				<view class="flex-col">
+				<view class="flex justify-between align-center padding-tb-xs">
 					<text class="num">123.45</text>
 					<text class="text-hint text-xs">.num 半角（金额/数字串）</text>
 				</view>
 			</view>
-			<view class="text-hint text-xs margin-top-xs">全角数字占 1em = 汉字宽："5天到期"→"５天到期" 与 "次日到期" 精确同宽；数字串/金额用 .num 不要全角化</view>
+			<view class="text-hint text-xs margin-top-xs">flex flex-col 竖排左对齐对比：全角"５天到期"与"次日到期"右边缘齐平；数字串/金额用 .num 不要全角化</view>
 		</view>
 
 		<!-- ======== 文字阴影 ======== -->
