@@ -34,6 +34,31 @@
 			<view class="text-hint text-xs margin-top-sm">小程序 view 默认 display:block 即撑满父宽；w-full = width:100% 显式声明。需要内容宽度的场景用 flex 子项（如上）或 width 类。常用组合 flex + gap-* + w-full 做全宽按钮行，内部 cu-btn flex-sub 等分。</view>
 		</view>
 
+		<!-- ======== 定宽容器（w-*，X 新增） ======== -->
+		<view class="cu-bar bg-white solid-bottom margin-top">
+			<view class="action">
+				<text class="cuIcon-title text-brand"></text>定宽容器（w-md，X 新增）
+			</view>
+		</view>
+		<view class="bg-white padding">
+			<view class="flex align-center solid-bottom padding-tb-xs">
+				<view class="w-md"><text class="text-cut">次日到期</text></view>
+				<text class="flex-sub">剩余 2 天</text>
+				<text class="cuIcon-right text-grey"></text>
+			</view>
+			<view class="flex align-center solid-bottom padding-tb-xs">
+				<view class="w-md"><text class="text-cut">5天到期</text></view>
+				<text class="flex-sub">剩余 5 天</text>
+				<text class="cuIcon-right text-grey"></text>
+			</view>
+			<view class="flex align-center padding-tb-xs">
+				<view class="w-md"><text class="text-cut">本月已逾期 12 天，请尽快处理</text></view>
+				<text class="flex-sub">已逾期</text>
+				<text class="cuIcon-right text-grey"></text>
+			</view>
+			<view class="text-hint text-xs margin-top-xs">w-md 固定 160rpx：左侧文字长短不一（含超长省略）时，右侧值列与箭头依然对齐。定宽类自带 flex-shrink:0，超宽配 text-cut。</view>
+		</view>
+
 		<!-- ======== 比例布局 ======== -->
 		<view class="cu-bar bg-white solid-bottom margin-top">
 			<view class="action">

@@ -783,7 +783,35 @@ image.loading::after {
 	min-width: 0;
 }
 
-/* 宽度 100% */
+/* 宽度工具（X 新增定宽档位，与 w-full 同族）
+   w-full：满宽 100%（撑满父容器）
+   w-xs ~ w-xl：定宽容器——flex 行固定某列宽度，文字长短不一不影响兄弟对齐；
+   自带 flex-shrink: 0 防止空间不足被压缩；内部文字超宽配 text-cut 或换行 */
 .w-full {
 	width: 100%;
+}
+
+.w-xs {
+	width: 96rpx;
+	flex-shrink: 0;
+}
+
+.w-sm {
+	width: 128rpx;
+	flex-shrink: 0;
+}
+
+.w-md {
+	width: 160rpx;
+	flex-shrink: 0;
+}
+
+.w-lg {
+	width: 224rpx;
+	flex-shrink: 0;
+}
+
+.w-xl {
+	width: 320rpx;
+	flex-shrink: 0;
 }

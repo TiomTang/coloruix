@@ -46,8 +46,8 @@ ColorUiX/
 
 - **卡片体系**：`cu-card`（白卡+圆角+阴影）、`shadow`/`shadow-lg`/`shadow-sm` 阴影三档、`round`/`radius` 圆角补权
 - **按钮/标签按压**：`cu-btn` 按压微缩放、`hover-shrink` + `hover-class="x-press"`（跨端按压态）
-- **语义体系**：`badge` 语义胶囊（income/expense/warning/brand/mute）、`status-dot` 状态点、`text-main/brand/income/expense/warning/sub/hint` 语义文字色、`num` 等宽数字、`text-justify` 两端对齐
-- **布局增强**：`gap-xs/sm/md/lg` 间距、`dashed-*` 虚线边框、`solid-top/bottom` 实线边
+- **语义体系**：`badge` 语义胶囊（income/expense/warning/brand/mute）、`status-dot` 状态点、`text-main/brand/income/expense/warning/sub/hint` 语义文字色、`num` 等宽数字、`numFw` 全角数字工具（`js/format.js`，中文短标签与纯汉字对齐）、`text-justify` 两端对齐
+- **布局增强**：`gap-xs/sm/md/lg` 间距、`dashed-*` 虚线边框、`solid-top/bottom` 实线边、`w-xs/sm/md/lg/xl` 定宽容器（flex 列对齐，配 `text-cut` 防溢出）
 - **主题换肤**：`js/themes.js` 运行时主题对象（apple/flat/赛博科幻 sci-fi/暗色 dark）+ `theme-flat` 类
 - **A 层语义变量化**：类库容器背景/分割线全部走 `--cu-bg-*`/`--cu-line`（bg-white→bg-card、cu-dialog→bg-sunken 等），暗色主题可完整跟随
 - **品牌色定制**：`customTheme(brand, base)` 工厂——主色自动推导深/浅底三件套，与任意主题风格叠加

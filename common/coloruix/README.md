@@ -171,10 +171,20 @@ css: {
 
 ```html
 <view class="w-full">宽度 100%</view>
+<view class="w-md">定宽容器（96~320rpx 五档：w-xs/sm/md/lg/xl）</view>
 <view class="min-w-0">允许收缩（flex 内防溢出）</view>
 <view class="safe-area-bottom">底部安全区（iPhone Home 条留白）</view>
 <view class="grid grid-square">正方形栅格</view>
 <view class="col-2">栅格占 2 列（col-1~col-5）</view>
+```
+
+**定宽容器（X 新增）**：flex 行中固定某列宽度，文字长短不一不影响兄弟对齐（自带 `flex-shrink: 0`，超宽配 `text-cut`）：
+```html
+<view class="flex align-center">
+  <view class="w-md"><text class="text-cut">次日到期</text></view>
+  <text class="flex-sub">剩余 2 天</text>
+  <text class="cuIcon-right text-grey"></text>
+</view>
 ```
 
 ---
@@ -342,6 +352,15 @@ css: {
 <text class="num text-xl">1,234.00</text>
 <text class="num">2,345.00</text>  <!-- 数字等宽，纵向对齐 -->
 ```
+
+**全角数字（X 新增）**：中文短标签里"单数字 + 汉字"与纯汉字标签宽度对齐（`5天到期` → `５天到期`，全角数字占 1em = 汉字宽；`.num` 的 tabular-nums 只解决数字间等宽，解决不了数字与汉字的宽度差）：
+
+```js
+import { numFw } from '@/common/coloruix/js/format.js'
+numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
+```
+
+> 适用"单数字 + 汉字"短文本（状态/期限/排名）；**数字串/金额用 `.num`，不要全角化**（123 全角后占 3em 过宽）。
 
 ---
 
