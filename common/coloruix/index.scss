@@ -1,0 +1,31 @@
+// ============================================================
+// ColorUIX · 入口
+// ------------------------------------------------------------
+// 基于 ColorUI v2.1.6 (2019-05-31 by 文晓港) fork 改造
+// 原版为纯 CSS（main.css/icon.css/animation.css），本系统为 SCSS 分层（variables/core/themes）
+// 独立于 uni-app/uni.scss，可整体移植到任意 uni-app 项目
+//
+// 引入方式（uni-app 项目）：
+//   @use 'coloruix';                    // 默认主题（Apple 现代风）
+//   @use 'coloruix/themes';             // 若需主题类（.theme-flat 等）
+//
+// 分层：
+//   variables/  token 层（SCSS 变量 + 运行时 --cu-* CSS 变量）
+//   core/       类库（reset/layout/typography/components/icons/animation）
+//   themes/     视觉层（主题文件，覆盖 --cu-* 实现换肤）
+//   js/         运行时主题对象（JS 侧换肤）
+// ============================================================
+
+// token + CSS 变量默认值（Apple 主题即默认值）
+@use 'variables' as *;
+
+// 核心类库
+@use 'core/reset';
+@use 'core/layout';
+@use 'core/typography';
+@use 'core/components';
+@use 'core/icons';
+@use 'core/animation';
+
+// 主题（默认不激活任何主题类；需要扁平化等主题时引入 themes）
+@use 'themes';

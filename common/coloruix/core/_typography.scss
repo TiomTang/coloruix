@@ -1,0 +1,198 @@
+// ColorUIX · 文字排版（原 main.css「文本」区，变量化）
+
+/* ==================
+          文本
+ ==================== */
+
+/* 字号阶梯统一走 --cu-font-* 变量（token 层 24/28/32/36/44rpx，
+   与 .cu-fontsize-N 放大档位联动，替代原版硬编码 upx） */
+.text-xs {
+	font-size: var(--cu-font-xs);
+}
+
+.text-sm {
+	font-size: var(--cu-font-sm);
+}
+
+.text-df {
+	font-size: var(--cu-font-df);
+}
+
+.text-lg {
+	font-size: var(--cu-font-lg);
+}
+
+.text-xl {
+	font-size: var(--cu-font-xl);
+}
+
+.text-xxl {
+	font-size: var(--cu-font-xl);
+}
+
+/* 超大展示字号（品牌大字/封面标题）：不参与阅读字号缩放 */
+.text-sl {
+	font-size: 80rpx;
+}
+
+.text-xsl {
+	font-size: 120rpx;
+}
+
+/* ==================
+        字号放大档位（X 组件增强）
+   页面根 view 挂 .cu-fontsize-1（大）/ .cu-fontsize-2（特大），
+   覆盖 --cu-font-* 变量供全部后代继承；无类 = 标准档。
+   用法：<view class="page cu-fontsize-1"> 或动态 :class="'cu-fontsize-' + level"
+ ==================== */
+.cu-fontsize-1 {
+	--cu-font-xs: 26rpx;
+	--cu-font-sm: 30rpx;
+	--cu-font-df: 34rpx;
+	--cu-font-lg: 38rpx;
+	--cu-font-xl: 48rpx;
+	--cu-font-num: 64rpx;
+}
+
+.cu-fontsize-2 {
+	--cu-font-xs: 28rpx;
+	--cu-font-sm: 32rpx;
+	--cu-font-df: 36rpx;
+	--cu-font-lg: 40rpx;
+	--cu-font-xl: 52rpx;
+	--cu-font-num: 68rpx;
+}
+
+.text-Abc {
+	text-transform: Capitalize;
+}
+
+.text-ABC {
+	text-transform: Uppercase;
+}
+
+.text-abc {
+	text-transform: Lowercase;
+}
+
+.text-price::before {
+	content: "¥";
+	font-size: 80%;
+	margin-right: 4rpx;
+}
+
+.text-cut {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-content {
+	line-height: 1.6;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-red,
+.line-red,
+.lines-red {
+	color: var(--cu-color-red);
+}
+
+.text-orange,
+.line-orange,
+.lines-orange {
+	color: var(--cu-color-orange);
+}
+
+.text-yellow,
+.line-yellow,
+.lines-yellow {
+	color: var(--cu-color-yellow);
+}
+
+.text-olive,
+.line-olive,
+.lines-olive {
+	color: var(--cu-color-olive);
+}
+
+.text-green,
+.line-green,
+.lines-green {
+	color: var(--cu-color-green);
+}
+
+.text-cyan,
+.line-cyan,
+.lines-cyan {
+	color: var(--cu-color-cyan);
+}
+
+.text-blue,
+.line-blue,
+.lines-blue {
+	color: var(--cu-brand);
+}
+
+.text-purple,
+.line-purple,
+.lines-purple {
+	color: var(--cu-color-purple);
+}
+
+.text-mauve,
+.line-mauve,
+.lines-mauve {
+	color: var(--cu-color-mauve);
+}
+
+.text-pink,
+.line-pink,
+.lines-pink {
+	color: var(--cu-color-pink);
+}
+
+.text-brown,
+.line-brown,
+.lines-brown {
+	color: var(--cu-color-brown);
+}
+
+.text-grey,
+.line-grey,
+.lines-grey {
+	color: var(--cu-color-grey);
+}
+
+.text-gray,
+.line-gray,
+.lines-gray {
+	color: #aaaaaa;
+}
+
+.text-black,
+.line-black,
+.lines-black {
+	color: var(--cu-text-main);
+}
+
+.text-white,
+.line-white,
+.lines-white {
+	color: #ffffff;
+}

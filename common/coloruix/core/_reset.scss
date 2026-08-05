@@ -1,0 +1,24 @@
+// ColorUIX · 初始化（原 ColorUI main.css「初始化」区，变量化）
+
+/* ==================
+        初始化
+ ==================== */
+page {
+	background-color: var(--cu-bg-page);
+	font-size: var(--cu-font-sm);
+	color: var(--cu-text-main);
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+view,
+scroll-view,
+swiper,
+button,
+input,
+textarea,
+label,
+navigator,
+image {
+	box-sizing: border-box;
+}
+

@@ -1,0 +1,69 @@
+// ============================================================
+// ColorUIX · Token · 颜色
+// 独立于 uni-app/uni.scss，任何 uni-app 项目可直接移植
+//
+// 分层设计：
+//   1. 品牌色 —— 换肤/主题的核心，运行时 CSS 变量驱动
+//   2. 语义色 —— 业务状态（收入/支出/待办）
+//   3. ColorUI 兼容色板 —— 原版功能色（bg-red/bg-green 等），token 化便于微调
+// ============================================================
+
+// ---------- 1. 品牌色（主题驱动） ----------
+$cu-brand: #4A9BD9;         // 主色 · 冰川蓝
+$cu-brand-deep: #2E7FC4;    // 主色深（渐变/按压态）
+$cu-brand-soft: #E8F4FC;    // 主色浅底（次按钮/选中底）
+
+// ---------- 2. 语义色（业务状态） ----------
+$cu-income: #16A34A;        // 收入/成功
+$cu-expense: #DC2626;       // 支出/危险
+$cu-warning: #F59E0B;       // 待办/警告
+
+// ---------- 3. 中性色 ----------
+$cu-text-main: #111827;     // 主文字
+$cu-text-sub: #6B7280;      // 次级文字
+$cu-text-hint: #9CA3AF;     // 弱提示
+$cu-bg-page: #F5F7FA;       // 页面底色
+$cu-bg-card: #FFFFFF;       // 卡片底色
+$cu-bg-sunken: #F1F4F9;     // 下沉底色（输入框/分段控件底）
+$cu-line: #E5E7EB;          // 分割线
+$cu-line-strong: #D1D5DB;   // 强分割线
+
+// ---------- 3b. 语义浅底（标签/提示底） ----------
+$cu-ok-bg: #F0FDF4;         // 成功浅底
+$cu-danger-bg: #FEF2F2;     // 危险浅底
+$cu-warn-bg: #FFFBEB;       // 警告浅底
+
+// ---------- 4. ColorUI 兼容色板（原版功能色，值保持原样） ----------
+$cu-red: #e54d42;
+$cu-orange: #f37b1d;
+$cu-yellow: #fbbd08;
+$cu-olive: #8dc63f;
+$cu-green: #39b54a;
+$cu-cyan: #1cbbb4;
+$cu-blue: #0081ff;          // ColorUI 原始蓝（不再作为品牌主色，保留给依赖它的插件）
+$cu-purple: #6739b6;
+$cu-mauve: #9c26b0;
+$cu-pink: #e03997;
+$cu-brown: #a5673f;
+$cu-grey: #8799a3;
+$cu-black: #333333;
+$cu-white: #ffffff;
+
+// ---------- 色板 map（bg-*/text-* 工具类生成用） ----------
+// 注意：blue 映射到 $cu-brand（品牌色），不是 ColorUI 原始蓝
+$cu-color-map: (
+  'red': $cu-red,
+  'orange': $cu-orange,
+  'yellow': $cu-yellow,
+  'olive': $cu-olive,
+  'green': $cu-green,
+  'cyan': $cu-cyan,
+  'blue': $cu-brand,
+  'purple': $cu-purple,
+  'mauve': $cu-mauve,
+  'pink': $cu-pink,
+  'brown': $cu-brown,
+  'grey': $cu-grey,
+  'black': $cu-black,
+  'white': $cu-white,
+);

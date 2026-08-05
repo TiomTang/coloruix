@@ -1,0 +1,789 @@
+// ColorUIX · 布局工具（原 main.css「图片/边框/布局」区，变量化）
+
+/* ==================
+          图片
+ ==================== */
+
+image {
+	max-width: 100%;
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+}
+
+image.loading::before {
+	content: "";
+	background-color: #f5f5f5;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+}
+
+image.loading::after {
+	content: "\e7f1";
+	font-family: "cuIcon";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32rpx;
+	height: 32rpx;
+	line-height: 32rpx;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: var(--cu-font-df);
+	margin: auto;
+	color: #ccc;
+	-webkit-animation: cuIcon-spin 2s infinite linear;
+	animation: cuIcon-spin 2s infinite linear;
+	display: block;
+}
+
+.response {
+	width: 100%;
+}
+
+/* ==================
+          边框
+ ==================== */
+
+/* -- 实线 -- */
+
+.solid,
+.solid-top,
+.solid-right,
+.solid-bottom,
+.solid-left,
+.solids,
+.solids-top,
+.solids-right,
+.solids-bottom,
+.solids-left,
+.dashed,
+.dashed-top,
+.dashed-right,
+.dashed-bottom,
+.dashed-left {
+	position: relative;
+}
+
+.solid::after,
+.solid-top::after,
+.solid-right::after,
+.solid-bottom::after,
+.solid-left::after,
+.solids::after,
+.solids-top::after,
+.solids-right::after,
+.solids-bottom::after,
+.solids-left::after,
+.dashed::after,
+.dashed-top::after,
+.dashed-right::after,
+.dashed-bottom::after,
+.dashed-left::after {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.solid::after {
+	border: 1rpx solid var(--cu-line);
+}
+
+.solid-top::after {
+	border-top: 1rpx solid var(--cu-line);
+}
+
+.solid-right::after {
+	border-right: 1rpx solid var(--cu-line);
+}
+
+.solid-bottom::after {
+	border-bottom: 1rpx solid var(--cu-line);
+}
+
+.solid-left::after {
+	border-left: 1rpx solid var(--cu-line);
+}
+
+.solids::after {
+	border: 8rpx solid var(--cu-line);
+}
+
+.solids-top::after {
+	border-top: 8rpx solid var(--cu-line);
+}
+
+.solids-right::after {
+	border-right: 8rpx solid var(--cu-line);
+}
+
+.solids-bottom::after {
+	border-bottom: 8rpx solid var(--cu-line);
+}
+
+.solids-left::after {
+	border-left: 8rpx solid var(--cu-line);
+}
+
+/* -- 虚线 -- */
+
+.dashed::after {
+	border: 1rpx dashed var(--cu-line-strong);
+}
+
+.dashed-top::after {
+	border-top: 1rpx dashed var(--cu-line-strong);
+}
+
+.dashed-right::after {
+	border-right: 1rpx dashed var(--cu-line-strong);
+}
+
+.dashed-bottom::after {
+	border-bottom: 1rpx dashed var(--cu-line-strong);
+}
+
+.dashed-left::after {
+	border-left: 1rpx dashed var(--cu-line-strong);
+}
+
+/* -- 阴影 -- */
+
+.shadow[class*='white'] {
+	--ShadowSize: 0 1rpx 6rpx;
+}
+
+.shadow-lg {
+	--ShadowSize: 0rpx 40rpx 100rpx 0rpx;
+}
+
+.shadow-warp {
+	position: relative;
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.shadow-warp:before,
+.shadow-warp:after {
+	position: absolute;
+	content: "";
+	top: 20rpx;
+	bottom: 30rpx;
+	left: 20rpx;
+	width: 50%;
+	box-shadow: 0 30rpx 20rpx rgba(0, 0, 0, 0.2);
+	transform: rotate(-3deg);
+	z-index: -1;
+}
+
+.shadow-warp:after {
+	right: 20rpx;
+	left: auto;
+	transform: rotate(3deg);
+}
+
+.shadow-blur {
+	position: relative;
+}
+
+.shadow-blur::before {
+	content: "";
+	display: block;
+	background: inherit;
+	filter: blur(10rpx);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 10rpx;
+	left: 10rpx;
+	z-index: -1;
+	opacity: 0.4;
+	transform-origin: 0 0;
+	border-radius: inherit;
+	transform: scale(1, 1);
+}
+
+/* ==================
+          布局
+ ==================== */
+
+/*  -- flex弹性布局 -- */
+
+.flex {
+	display: flex;
+}
+
+.basis-xs {
+	flex-basis: 20%;
+}
+
+.basis-sm {
+	flex-basis: 40%;
+}
+
+.basis-df {
+	flex-basis: 50%;
+}
+
+.basis-lg {
+	flex-basis: 60%;
+}
+
+.basis-xl {
+	flex-basis: 80%;
+}
+
+.flex-sub {
+	flex: 1;
+}
+
+.flex-twice {
+	flex: 2;
+}
+
+.flex-treble {
+	flex: 3;
+}
+
+.flex-direction {
+	flex-direction: column;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-center {
+	align-self: flex-center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+/* grid布局 */
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grid.grid-square {
+	overflow: hidden;
+}
+
+.grid.grid-square .cu-tag {
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-bottom-left-radius: 6rpx;
+	padding: 6rpx 12rpx;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid.grid-square>view>text[class*="cuIcon-"] {
+	font-size: 52rpx;
+	position: absolute;
+	color: var(--cu-color-grey);
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.grid.grid-square>view {
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	border-radius: 6rpx;
+	position: relative;
+	overflow: hidden;
+}
+.grid.grid-square>view.bg-img image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.grid.col-1.grid-square>view {
+	padding-bottom: 100%;
+	height: 0;
+	margin-right: 0;
+}
+
+.grid.col-2.grid-square>view {
+	padding-bottom: calc((100% - 20rpx)/2);
+	height: 0;
+	width: calc((100% - 20rpx)/2);
+}
+
+.grid.col-3.grid-square>view {
+	padding-bottom: calc((100% - 40rpx)/3);
+	height: 0;
+	width: calc((100% - 40rpx)/3);
+}
+
+.grid.col-4.grid-square>view {
+	padding-bottom: calc((100% - 60rpx)/4);
+	height: 0;
+	width: calc((100% - 60rpx)/4);
+}
+
+.grid.col-5.grid-square>view {
+	padding-bottom: calc((100% - 80rpx)/5);
+	height: 0;
+	width: calc((100% - 80rpx)/5);
+}
+
+.grid.col-2.grid-square>view:nth-child(2n),
+.grid.col-3.grid-square>view:nth-child(3n),
+.grid.col-4.grid-square>view:nth-child(4n),
+.grid.col-5.grid-square>view:nth-child(5n) {
+	margin-right: 0;
+}
+
+.grid.col-1>view {
+	width: 100%;
+}
+
+.grid.col-2>view {
+	width: 50%;
+}
+
+.grid.col-3>view {
+	width: 33.33%;
+}
+
+.grid.col-4>view {
+	width: 25%;
+}
+
+.grid.col-5>view {
+	width: 20%;
+}
+
+/*  -- 内外边距 -- */
+
+.margin-0 {
+	margin: 0;
+}
+
+.margin-xs {
+	margin: 10rpx;
+}
+
+.margin-sm {
+	margin: 20rpx;
+}
+
+.margin {
+	margin: 30rpx;
+}
+
+.margin-lg {
+	margin: 40rpx;
+}
+
+.margin-xl {
+	margin: 50rpx;
+}
+
+.margin-top-xs {
+	margin-top: 10rpx;
+}
+
+.margin-top-sm {
+	margin-top: 20rpx;
+}
+
+.margin-top {
+	margin-top: 30rpx;
+}
+
+.margin-top-lg {
+	margin-top: 40rpx;
+}
+
+.margin-top-xl {
+	margin-top: 50rpx;
+}
+
+.margin-right-xs {
+	margin-right: 10rpx;
+}
+
+.margin-right-sm {
+	margin-right: 20rpx;
+}
+
+.margin-right {
+	margin-right: 30rpx;
+}
+
+.margin-right-lg {
+	margin-right: 40rpx;
+}
+
+.margin-right-xl {
+	margin-right: 50rpx;
+}
+
+.margin-bottom-xs {
+	margin-bottom: 10rpx;
+}
+
+.margin-bottom-sm {
+	margin-bottom: 20rpx;
+}
+
+.margin-bottom {
+	margin-bottom: 30rpx;
+}
+
+.margin-bottom-lg {
+	margin-bottom: 40rpx;
+}
+
+.margin-bottom-xl {
+	margin-bottom: 50rpx;
+}
+
+.margin-left-xs {
+	margin-left: 10rpx;
+}
+
+.margin-left-sm {
+	margin-left: 20rpx;
+}
+
+.margin-left {
+	margin-left: 30rpx;
+}
+
+.margin-left-lg {
+	margin-left: 40rpx;
+}
+
+.margin-left-xl {
+	margin-left: 50rpx;
+}
+
+.margin-lr-xs {
+	margin-left: 10rpx;
+	margin-right: 10rpx;
+}
+
+.margin-lr-sm {
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+}
+
+.margin-lr {
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+
+.margin-lr-lg {
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+}
+
+.margin-lr-xl {
+	margin-left: 50rpx;
+	margin-right: 50rpx;
+}
+
+.margin-tb-xs {
+	margin-top: 10rpx;
+	margin-bottom: 10rpx;
+}
+
+.margin-tb-sm {
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+}
+
+.margin-tb {
+	margin-top: 30rpx;
+	margin-bottom: 30rpx;
+}
+
+.margin-tb-lg {
+	margin-top: 40rpx;
+	margin-bottom: 40rpx;
+}
+
+.margin-tb-xl {
+	margin-top: 50rpx;
+	margin-bottom: 50rpx;
+}
+
+.padding-0 {
+	padding: 0;
+}
+
+.padding-xs {
+	padding: 10rpx;
+}
+
+.padding-sm {
+	padding: 20rpx;
+}
+
+.padding {
+	padding: 30rpx;
+}
+
+.padding-lg {
+	padding: 40rpx;
+}
+
+.padding-xl {
+	padding: 50rpx;
+}
+
+.padding-top-xs {
+	padding-top: 10rpx;
+}
+
+.padding-top-sm {
+	padding-top: 20rpx;
+}
+
+.padding-top {
+	padding-top: 30rpx;
+}
+
+.padding-top-lg {
+	padding-top: 40rpx;
+}
+
+.padding-top-xl {
+	padding-top: 50rpx;
+}
+
+.padding-right-xs {
+	padding-right: 10rpx;
+}
+
+.padding-right-sm {
+	padding-right: 20rpx;
+}
+
+.padding-right {
+	padding-right: 30rpx;
+}
+
+.padding-right-lg {
+	padding-right: 40rpx;
+}
+
+.padding-right-xl {
+	padding-right: 50rpx;
+}
+
+.padding-bottom-xs {
+	padding-bottom: 10rpx;
+}
+
+.padding-bottom-sm {
+	padding-bottom: 20rpx;
+}
+
+.padding-bottom {
+	padding-bottom: 30rpx;
+}
+
+.padding-bottom-lg {
+	padding-bottom: 40rpx;
+}
+
+.padding-bottom-xl {
+	padding-bottom: 50rpx;
+}
+
+.padding-left-xs {
+	padding-left: 10rpx;
+}
+
+.padding-left-sm {
+	padding-left: 20rpx;
+}
+
+.padding-left {
+	padding-left: 30rpx;
+}
+
+.padding-left-lg {
+	padding-left: 40rpx;
+}
+
+.padding-left-xl {
+	padding-left: 50rpx;
+}
+
+.padding-lr-xs {
+	padding-left: 10rpx;
+	padding-right: 10rpx;
+}
+
+.padding-lr-sm {
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+}
+
+.padding-lr {
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+}
+
+.padding-lr-lg {
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+}
+
+.padding-lr-xl {
+	padding-left: 50rpx;
+	padding-right: 50rpx;
+}
+
+.padding-tb-xs {
+	padding-top: 10rpx;
+	padding-bottom: 10rpx;
+}
+
+.padding-tb-sm {
+	padding-top: 20rpx;
+	padding-bottom: 20rpx;
+}
+
+.padding-tb {
+	padding-top: 30rpx;
+	padding-bottom: 30rpx;
+}
+
+.padding-tb-lg {
+	padding-top: 40rpx;
+	padding-bottom: 40rpx;
+}
+
+.padding-tb-xl {
+	padding-top: 50rpx;
+	padding-bottom: 50rpx;
+}
+
+/* -- 浮动 --  */
+
+.cf::after,
+.cf::before {
+	content: " ";
+	display: table;
+}
+
+.cf::after {
+	clear: both;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+
+/* ============================================================
+   ColorUIX · 布局扩展（X 新增：间距/弹性/防溢出）
+   ============================================================ */
+
+/* flex 子项间距（ColorUI 无 gap，只能手动 margin） */
+.gap-xs { gap: 8rpx; }
+.gap-sm { gap: 16rpx; }
+.gap-md { gap: 24rpx; }
+.gap-lg { gap: 32rpx; }
+
+/* flex:1 + 防溢出（长文本截断不撑破） */
+.flex-1 {
+	flex: 1;
+	min-width: 0;
+}
+
+/* 纵向 flex */
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+/* 防溢出 */
+.min-w-0 {
+	min-width: 0;
+}
+
+/* 宽度 100% */
+.w-full {
+	width: 100%;
+}

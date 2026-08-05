@@ -1,0 +1,65 @@
+// ============================================================
+// ColorUIX · Token 聚合入口
+// 用法：@use 'coloruix/variables' as *;   （拿到全部 $cu-* 变量）
+// 本文件同时把 token 输出为 CSS 变量（--cu-*），是运行时换肤的地基：
+//   主题文件/themes.js 通过覆盖 --cu-* 实现换肤
+// ============================================================
+@use 'sass:map';
+@use 'colors' as *;
+@use 'radius' as *;
+@use 'shadows' as *;
+@use 'spacing' as *;
+@use 'typography' as *;
+
+// ---------- 运行时 CSS 变量（默认值 = Apple 现代主题） ----------
+:root,
+page {
+  // 品牌 + 语义
+  --cu-brand: #{$cu-brand};
+  --cu-brand-deep: #{$cu-brand-deep};
+  --cu-brand-soft: #{$cu-brand-soft};
+  --cu-income: #{$cu-income};
+  --cu-expense: #{$cu-expense};
+  --cu-warning: #{$cu-warning};
+
+  // 中性色
+  --cu-text-main: #{$cu-text-main};
+  --cu-text-sub: #{$cu-text-sub};
+  --cu-text-hint: #{$cu-text-hint};
+  --cu-bg-page: #{$cu-bg-page};
+  --cu-bg-card: #{$cu-bg-card};
+  --cu-bg-sunken: #{$cu-bg-sunken};
+  --cu-line: #{$cu-line};
+  --cu-line-strong: #{$cu-line-strong};
+
+  // 语义浅底
+  --cu-ok-bg: #{$cu-ok-bg};
+  --cu-danger-bg: #{$cu-danger-bg};
+  --cu-warn-bg: #{$cu-warn-bg};
+
+  // ColorUI 兼容色板
+  @each $name, $val in $cu-color-map {
+    --cu-color-#{$name}: #{$val};
+  }
+
+  // 圆角 / 阴影 / 间距 / 字号
+  --cu-radius-none: #{$cu-radius-none};
+  --cu-radius-sm: #{$cu-radius-sm};
+  --cu-radius-md: #{$cu-radius-md};
+  --cu-radius-lg: #{$cu-radius-lg};
+  --cu-radius-round: #{$cu-radius-round};
+  --cu-shadow-none: #{$cu-shadow-none};
+  --cu-shadow-card: #{$cu-shadow-card};
+  --cu-shadow-float: #{$cu-shadow-float};
+  --cu-space-xs: #{$cu-space-xs};
+  --cu-space-sm: #{$cu-space-sm};
+  --cu-space-md: #{$cu-space-md};
+  --cu-space-lg: #{$cu-space-lg};
+  --cu-space-xl: #{$cu-space-xl};
+  --cu-font-xs: #{$cu-font-xs};
+  --cu-font-sm: #{$cu-font-sm};
+  --cu-font-df: #{$cu-font-df};
+  --cu-font-lg: #{$cu-font-lg};
+  --cu-font-xl: #{$cu-font-xl};
+  --cu-font-num: #{$cu-font-num};
+}
