@@ -294,6 +294,18 @@ css: {
 <text class="text-xxl">超大</text>
 ```
 
+**字号放大档位（X 新增）**：页面根 view 挂 `cu-fontsize-1~4`（大/特大/超大/极大），全部 `.text-*` 与组件字号（按钮/表单/列表）联动放大；无显式字号类的继承元素（表单标题/输入框）也随档位（档位类自带 `font-size: var(--cu-font-df)`）；无类 = 标准档，共 **5 档**。档位值由 SCSS 变量编译期推导——改 `variables/_typography.scss` 默认字号后**重新编译自动联动**。
+
+> 实现说明：档位不能用 `calc(var(--cu-font-*) + n)` 运行时推导——CSS 自定义属性在同一元素上 `var()` 引用自身声明会构成循环（guaranteed-invalid），档位会整体失效、字体回退继承。
+
+```html
+<view class="page cu-fontsize-2">   <!-- 整页放大一档 -->
+  <text class="text-df">正文随档位放大</text>
+</view>
+```
+
+> 边界：若同一元素既绑 `:style="themeVars"`（主题运行时覆盖）又挂 `cu-fontsize-N`，内联样式优先级更高，档位不生效——主题变量建议挂外层、档位类挂内层，分两个层级。
+
 ### 7.2 对齐与修饰
 
 ```html

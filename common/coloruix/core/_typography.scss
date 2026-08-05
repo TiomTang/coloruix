@@ -1,4 +1,5 @@
 // ColorUIX · 文字排版（原 main.css「文本」区，变量化）
+@use '../variables/typography' as *;
 
 /* ==================
           文本
@@ -41,26 +42,54 @@
 
 /* ==================
         字号放大档位（X 组件增强）
-   页面根 view 挂 .cu-fontsize-1（大）/ .cu-fontsize-2（特大），
-   覆盖 --cu-font-* 变量供全部后代继承；无类 = 标准档。
-   用法：<view class="page cu-fontsize-1"> 或动态 :class="'cu-fontsize-' + level"
+   页面根 view 挂 .cu-fontsize-1~4（大/特大/超大/极大），
+   覆盖 --cu-font-* 变量供全部后代继承；无类 = 标准档（共 5 档）。
+   档位值由 SCSS 变量编译期推导（$cu-font-* + 增量）——改 variables
+   默认字号后重新编译自动联动。
+   档位类同时设置容器自身 font-size: var(--cu-font-df)——无显式字号类
+   的继承元素（表单标题/输入框等）也随档位放大。
+   注意：不能用 calc(var(--cu-font-*) + n) 推导——CSS 自定义属性在
+   同一元素上 var() 引用自身声明会构成循环（guaranteed-invalid），
+   导致档位整体失效、字体回退继承。
  ==================== */
 .cu-fontsize-1 {
-	--cu-font-xs: 26rpx;
-	--cu-font-sm: 30rpx;
-	--cu-font-df: 34rpx;
-	--cu-font-lg: 38rpx;
-	--cu-font-xl: 48rpx;
-	--cu-font-num: 64rpx;
+	font-size: var(--cu-font-df);
+	--cu-font-xs: #{$cu-font-xs + 2rpx};
+	--cu-font-sm: #{$cu-font-sm + 2rpx};
+	--cu-font-df: #{$cu-font-df + 2rpx};
+	--cu-font-lg: #{$cu-font-lg + 2rpx};
+	--cu-font-xl: #{$cu-font-xl + 4rpx};
+	--cu-font-num: #{$cu-font-num + 4rpx};
 }
 
 .cu-fontsize-2 {
-	--cu-font-xs: 28rpx;
-	--cu-font-sm: 32rpx;
-	--cu-font-df: 36rpx;
-	--cu-font-lg: 40rpx;
-	--cu-font-xl: 52rpx;
-	--cu-font-num: 68rpx;
+	font-size: var(--cu-font-df);
+	--cu-font-xs: #{$cu-font-xs + 4rpx};
+	--cu-font-sm: #{$cu-font-sm + 4rpx};
+	--cu-font-df: #{$cu-font-df + 4rpx};
+	--cu-font-lg: #{$cu-font-lg + 4rpx};
+	--cu-font-xl: #{$cu-font-xl + 8rpx};
+	--cu-font-num: #{$cu-font-num + 8rpx};
+}
+
+.cu-fontsize-3 {
+	font-size: var(--cu-font-df);
+	--cu-font-xs: #{$cu-font-xs + 6rpx};
+	--cu-font-sm: #{$cu-font-sm + 6rpx};
+	--cu-font-df: #{$cu-font-df + 6rpx};
+	--cu-font-lg: #{$cu-font-lg + 6rpx};
+	--cu-font-xl: #{$cu-font-xl + 12rpx};
+	--cu-font-num: #{$cu-font-num + 12rpx};
+}
+
+.cu-fontsize-4 {
+	font-size: var(--cu-font-df);
+	--cu-font-xs: #{$cu-font-xs + 8rpx};
+	--cu-font-sm: #{$cu-font-sm + 8rpx};
+	--cu-font-df: #{$cu-font-df + 8rpx};
+	--cu-font-lg: #{$cu-font-lg + 8rpx};
+	--cu-font-xl: #{$cu-font-xl + 16rpx};
+	--cu-font-num: #{$cu-font-num + 16rpx};
 }
 
 .text-Abc {

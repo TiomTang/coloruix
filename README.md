@@ -51,7 +51,7 @@ ColorUiX/
 - **主题换肤**：`js/themes.js` 运行时主题对象（apple/flat/赛博科幻 sci-fi/暗色 dark）+ `theme-flat` 类
 - **A 层语义变量化**：类库容器背景/分割线全部走 `--cu-bg-*`/`--cu-line`（bg-white→bg-card、cu-dialog→bg-sunken 等），暗色主题可完整跟随
 - **品牌色定制**：`customTheme(brand, base)` 工厂——主色自动推导深/浅底三件套，与任意主题风格叠加
-- **动态字号**：`.text-*` 全走 `--cu-font-*` 变量，`cu-fontsize-1/2` 三档放大（标准/大/特大），页面根挂类即可全局联动
+- **动态字号**：`.text-*` 全走 `--cu-font-*` 变量，`cu-fontsize-1/2/3/4` 五档放大（标准/大/特大/超大/极大），档位由 SCSS 变量编译期推导（改默认字号重新编译自动联动），页面根挂类即可全局联动
 - **模态增强**：`bottom-modal` 独立弹窗（左右下留边距）、`drawer-modal` 侧边抽屉
 - **品牌色**：`bg-blue`/`bg-gradual-blue` 品牌色为冰川蓝（#4A9BD9）
 
@@ -80,7 +80,7 @@ ColorUiX/
 | 组件 | swiper | card/screen/tower 轮播 |
 | 组件 | nav | cu-bar 导航 + tabbar + cu-capsule |
 | 扩展 | theme | **运行时换肤 apple/flat/sci-fi/dark + 品牌色定制（X 新增）** |
-| 扩展 | fontsize | **动态字号三档（标准/大/特大）** |
+| 扩展 | fontsize | **动态字号五档（标准/大/特大/超大/极大）** |
 | 扩展 | animation | animation-* 动效 + hover-shrink |
 | 扩展 | drawer | 抽屉 |
 | 扩展 | indexes | 索引列表 |

@@ -14,6 +14,8 @@
 					<view class="cu-tag radius" :class="level === 0 ? 'bg-blue' : 'bg-grey light'" @tap="setLevel(0)">标准</view>
 					<view class="cu-tag radius" :class="level === 1 ? 'bg-blue' : 'bg-grey light'" @tap="setLevel(1)">大</view>
 					<view class="cu-tag radius" :class="level === 2 ? 'bg-blue' : 'bg-grey light'" @tap="setLevel(2)">特大</view>
+					<view class="cu-tag radius" :class="level === 3 ? 'bg-blue' : 'bg-grey light'" @tap="setLevel(3)">超大</view>
+					<view class="cu-tag radius" :class="level === 4 ? 'bg-blue' : 'bg-grey light'" @tap="setLevel(4)">极大</view>
 				</view>
 			</view>
 			<view class="text-hint text-xs margin-top-xs">选择后持久化，重新打开页面自动恢复</view>
@@ -62,7 +64,7 @@
 <script setup>
 	import { ref, computed } from 'vue'
 
-	// 冷启动：读取持久化档位（0=标准 1=大 2=特大，缺省 0）
+	// 冷启动：读取持久化档位（0=标准 1=大 2=特大 3=超大 4=极大，缺省 0）
 	const level = ref(uni.getStorageSync('cu-fontsize') || 0)
 	const fontsizeClass = computed(() => (level.value > 0 ? 'cu-fontsize-' + level.value : ''))
 
