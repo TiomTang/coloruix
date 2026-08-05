@@ -58,7 +58,7 @@ css: {
 ### 1.3 用到的第一个类
 
 ```html
-<view class="card">我是卡片</view>
+<view class="cu-card">我是卡片</view>
 <button class="cu-btn bg-blue">我是按钮</button>
 <text class="text-brand">我是品牌色文字</text>
 <text class="cuIcon cuIcon-search"></text>
@@ -76,7 +76,7 @@ css: {
     <!-- 页面内容区：上下留白 -->
     <view class="padding">
       <!-- ① 卡片容器 -->
-      <view class="card padding-lr padding-tb">
+      <view class="cu-card padding-lr padding-tb">
         <!-- ② 布局：flex 横排 + 两端对齐 + 子项间距 -->
         <view class="flex justify-between align-center gap-sm">
           <text class="text-bold text-lg">本月账单</text>
@@ -99,7 +99,7 @@ css: {
 ```
 
 **记住三个套路**：
-- 容器用 `card`（白卡+圆角+阴影）
+- 容器用 `cu-card`（白卡+圆角+阴影）
 - 排列用 `flex` + `justify-*`/`align-*` + `gap-*`
 - 文字颜色/大小用 `text-*`，状态用 `badge-*`/`status-dot-*`
 
@@ -116,6 +116,7 @@ css: {
 | `flex-1` | 子项占满剩余空间；附带 `min-width:0` 跨端收缩保护 |
 | `flex-sub` / `flex-twice` / `flex-treble` | 按比例分配（1:2:3） |
 | `flex-wrap` | 允许换行 |
+| `basis-xs/sm/df` | 子项固定宽度占比（20%/40%/50%，配合 `flex-wrap` 做流式布局） |
 | `justify-center/end/between/around` | 主轴对齐（居中/末尾/两端/环绕） |
 | `align-center/end/stretch` | 交叉轴对齐 |
 | `gap-xs/sm/md/lg` | 子项间距（8/16/24/32rpx） |
@@ -183,8 +184,8 @@ css: {
 | `shadow-sm` | 无阴影（配合扁平化主题） |
 
 ```html
-<view class="card round">胶囊卡片</view>
-<view class="card shadow-lg">悬浮感卡片</view>
+<view class="cu-card round">胶囊卡片</view>
+<view class="cu-card shadow-lg">悬浮感卡片</view>
 ```
 
 ### 3.4 其他
@@ -206,6 +207,8 @@ css: {
   <text class="cuIcon-right text-grey"></text>
 </view>
 ```
+
+> 与 `basis-*` 的区别：`basis-*`（百分比 20%~80%，可随容器伸缩）用于**流式比例**布局；`w-*`（固定 rpx，自带 `flex-shrink: 0` 不可压缩）用于**定宽列对齐**。比例场景用 `basis-*`，定宽场景用 `w-*`。
 
 ---
 
@@ -387,7 +390,7 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 ## 8. 列表
 
 ```html
-<view class="card">
+<view class="cu-card">
   <view class="cu-list">
     <view class="cu-item flex justify-between align-center">
       <view class="flex align-center gap-sm">
@@ -412,7 +415,7 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 ## 9. 表单
 
 ```html
-<view class="card">
+<view class="cu-card">
   <view class="cu-form-group">
     <view class="title">姓名</view>
     <input placeholder="请输入姓名" />
@@ -450,10 +453,12 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 <text class="cuIcon cuIcon-question"></text>
 ```
 
-**图标大小跟随父级字号**，颜色跟随 `color`/`text-*`：
+**图标大小跟随父级字号**（字号类 `text-*` 加在**父级节点**，图标自身只加颜色类——加在图标自身会被 `font-size: inherit` 覆盖，无效），颜色跟随 `color`/`text-*`：
 
 ```html
-<text class="cuIcon cuIcon-search text-brand text-xxl"></text>
+<view class="text-xxl">
+  <text class="cuIcon cuIcon-search text-brand"></text>
+</view>
 ```
 
 常用图标：`search` `add` `edit` `delete` `home` `people` `bill` `recharge` `calendar` `check` `right` `left` `close` `info` `question` `location` `phone` `message` `setting` `font`（完整清单见 `core/_icons.scss`）。
@@ -512,7 +517,7 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 组合按压反馈：可点击元素加 `hover-shrink`（按下微缩放，Apple 风）：
 
 ```html
-<view class="card hover-shrink" @tap="onTap">可点击卡片</view>
+<view class="cu-card hover-shrink" @tap="onTap">可点击卡片</view>
 ```
 
 ---
@@ -531,7 +536,34 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 </view>
 ```
 
-其他可用组件：`cu-timeline`（时间轴）、`cu-steps`（步骤条）、`cu-progress`（进度条）、`cu-avatar`（头像）、`cu-bar`（操作条）。
+其他可用组件：`cu-timeline`（时间轴）、`cu-steps`（步骤条）、`cu-progress`（进度条）、`cu-avatar`（头像）、`cu-bar`（操作条）、`cu-chat`（聊天气泡）、`cu-swiper`（轮播）、`cu-list`（列表）。
+
+**索引列表（indexes）**：右侧字母索引条 + 点击定位到对应分组（`scroll-into-view` 定位，demo：扩展 → 索引列表）：
+
+```html
+<scroll-view scroll-y class="flex-1 scroll-area" :scroll-into-view="'group-' + curLetter" scroll-with-animation>
+  <view :id="'group-' + curLetter" v-for="letter in letters">{{ letter }} 分组内容</view>
+</scroll-view>
+<view class="index-bar">
+  <view class="index-letter" v-for="letter in letters" @tap="curLetter = letter">{{ letter }}</view>
+</view>
+```
+
+> 坑：scroll-view 在 `flex-col` 容器里必须加 `min-height: 0`（`flex-1` 只保护横向 min-width），否则内容撑高不滚动、`scroll-into-view` 无效。
+
+**抽屉（drawer，X 新增）**：侧滑抽屉浮层（demo：扩展 → 抽屉），`cu-modal` 加 `drawer-modal` 形态 + `justify-start`（左侧）/`justify-end`（右侧）控制方向：
+
+```html
+<view class="cu-modal drawer-modal justify-start" :class="showLeft ? 'show' : ''" @tap="closeAll">
+  <view class="cu-dialog drawer-box" @tap.stop>
+    <view class="cu-bar bg-white justify-between solid-bottom">
+      <view class="action"><text class="cuIcon cuIcon-pullleft text-brand"></text>左侧抽屉</view>
+      <view class="action" @tap="closeAll"><text class="cuIcon cuIcon-close text-sub"></text></view>
+    </view>
+    <scroll-view scroll-y class="drawer-body"><!-- 抽屉内容 --></scroll-view>
+  </view>
+</view>
+```
 
 ---
 
@@ -563,10 +595,13 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 import { themes, defaultTheme } from '@/common/coloruix/js/themes.js'
 
 // 根 view 绑定
-<view :style="themeVars">
+const themeVars = themes[defaultTheme]
 // 切换
 themeVars = themes['flat']
 uni.setStorageSync('cu-theme', 'flat')   // 持久化，下次启动恢复
+```
+```html
+<view :style="themeVars">
 ```
 
 ### 14.3 新增主题（机制与模板）
@@ -643,7 +678,7 @@ mytheme: {
   '--cu-income': '#34C77B',
   '--cu-expense': '#FF5D5D',
   '--cu-warning': '#FFB020',
-  // ... 与 .theme-dark 完全一致
+  // ... 其余变量同模板 B
 },
 ```
 ```html
@@ -654,16 +689,16 @@ mytheme: {
 **用法二：静态类（可选，仅无 JS 的静态项目 / 局部区块换风格需要）**
 
 ```scss
-// themes/_dark.scss
-.theme-dark {
+// themes/_mine.scss
+.theme-mine {
   --cu-brand: #5B8CFF;
   /* ... */
 }
 ```
 ```html
-<view class="theme-dark"><!-- 该子树变暗色主题 --></view>
+<view class="theme-mine"><!-- 该子树变你的主题 --></view>
 ```
-（`themes/_index.scss` 加 `@use 'dark';`）
+（`themes/_index.scss` 加 `@use 'mine';`）
 
 > 内置的 `flat`/`sci-fi` 有 scss 类，是因为它们同时演示"静态挂类"（如局部扁平化）；`dark` 为纯 JS 动态示例（A 层变量化后可直接演示完整暗色）。**你自己新增主题只做动态切换的话，scss 那份可以不写。**
 
@@ -780,7 +815,7 @@ npx sass --no-source-map --load-path=. common/coloruix/index.scss /tmp/coloruix.
 
 ### 16.5 小程序 WXSS 限制
 
-- 不支持 `:last-child`、`+`、`>` 选择器（静默失效，改用类名）
+- 不支持 `:last-child`/`:first-child` 等伪类选择器（静默失效，改用类名）；`>` 子选择器、`+` 相邻选择器可用
 - 自定义组件内 scoped 样式在小程序端不可靠（关键布局放页面级样式）
 
 ---
