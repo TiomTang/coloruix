@@ -23,14 +23,15 @@
 			</view>
 		</view>
 		<view class="padding bg-white text-center">
-			<view class="flex flex-wrap gap-sm">
-				<view class="flex-1 padding line-red radius">line-red</view>
-				<view class="flex-1 padding line-blue radius">line-blue</view>
-				<view class="flex-1 padding line-green radius">line-green</view>
-				<view class="flex-1 padding line-orange radius">line-orange</view>
-				<view class="flex-1 padding lines-purple radius">lines-purple</view>
-				<view class="flex-1 padding lines-grey radius">lines-grey</view>
+			<view class="flex flex-wrap gap-xs">
+				<view class="w-lg padding radius solid line-red">line-red</view>
+				<view class="w-lg padding radius solid line-blue">line-blue</view>
+				<view class="w-lg padding radius solid line-green">line-green</view>
+				<view class="w-lg padding radius solid line-orange">line-orange</view>
+				<view class="w-lg padding radius solids lines-purple">lines-purple</view>
+				<view class="w-lg padding radius solids lines-grey">lines-grey</view>
 			</view>
+			<view class="text-hint text-xs margin-top-sm">line-* 只定义边框颜色（::after border-color），需配合 solid/solids（提供边框形状）或 cu-btn line-*（线框按钮）使用——单独用没有边框。</view>
 		</view>
 
 		<!-- ======== 阴影 ======== -->

@@ -1543,7 +1543,7 @@ button.cuIcon.lg {
 
 .cu-bar.input {
 	padding-right: 20rpx;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 }
 
 .cu-bar.input input {
@@ -1556,11 +1556,11 @@ button.cuIcon.lg {
 }
 
 .cu-bar.input .action {
-	margin-left: -10rpx;
+	margin-left: 0rpx;
 }
 
 .cu-bar.input .action+.action {
-	margin-left: 20rpx;
+	margin-left: 10rpx;
 }
 
 .cu-bar.input .action [class*="cuIcon-"] {

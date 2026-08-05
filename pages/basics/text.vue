@@ -177,7 +177,7 @@
 			</view>
 		</view>
 		<view class="padding bg-white">
-			<view class="text-cut padding bg-grey radius" style="width: 520rpx">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
+			<view class="text-cut padding bg-grey radius" style="width: 360rpx">我于杀戮之中绽放 ,亦如黎明中的花朵</view>
 		</view>
 
 		<!-- ======== 文字对齐 ======== -->

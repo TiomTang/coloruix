@@ -230,6 +230,28 @@
 			<view class="text-hint text-xs margin-top-sm">grid-square 子项按列宽等比撑高，无图时放 cuIcon 自动居中</view>
 		</view>
 
+		<!-- ======== 换行（flex-wrap） ======== -->
+		<view class="cu-bar bg-white solid-bottom margin-top">
+			<view class="action">
+				<text class="cuIcon-title text-brand"></text>换行（flex-wrap）
+			</view>
+		</view>
+		<view class="bg-white padding">
+			<view class="text-sub text-sm">不换行：flex（放不下时子项被压缩挤窄）</view>
+			<view class="flex">
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+			</view>
+			<view class="text-sub text-sm margin-top-sm">换行：flex flex-wrap（放不下时折行）</view>
+			<view class="flex flex-wrap">
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+				<view class="basis-df bg-grey padding-sm margin-xs radius text-center">50%</view>
+			</view>
+			<view class="text-hint text-xs margin-top-sm">flex 默认不换行，放不下时压缩子项；flex-wrap 允许折行。常用组合 flex-wrap + basis-*/w-* 做流式标签、卡片流。</view>
+		</view>
+
 		<!-- ======== 内外边距 ======== -->
 		<view class="cu-bar bg-white solid-bottom margin-top">
 			<view class="action">

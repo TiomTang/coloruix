@@ -9,7 +9,7 @@
 				<text class="text-hint text-xs">点击右侧字母定位</text>
 			</view>
 		</view>
-		<scroll-view scroll-y class="flex-1" :scroll-into-view="'group-' + curLetter" scroll-with-animation>
+		<scroll-view scroll-y class="flex-1 scroll-area" :scroll-into-view="'group-' + curLetter" scroll-with-animation>
 			<view v-for="letter in letters" :key="letter" :id="'group-' + letter">
 				<view class="index-head bg-blue">
 					<text class="text-white text-bold">{{ letter }}</text>
@@ -74,6 +74,10 @@
 <style lang="scss">
 	.page {
 		height: 100vh;
+	}
+
+	.scroll-area {
+		min-height: 0;   /* flex-col 里 scroll-view 必须 min-height:0 才能收缩并滚动（flex-1 只保护横向 min-width） */
 	}
 
 	.index-head {

@@ -140,6 +140,26 @@ css: {
 </view>
 ```
 
+**换行（`flex-wrap`）**：flex 默认不换行，放不下时压缩子项；加 `flex-wrap` 允许折行：
+
+```html
+<!-- 不换行：三个 50% 子项被压缩挤窄 -->
+<view class="flex">
+  <view class="basis-df">50%</view>
+  <view class="basis-df">50%</view>
+  <view class="basis-df">50%</view>
+</view>
+
+<!-- 换行：放不下时折行（两个一行 + 一个第二行） -->
+<view class="flex flex-wrap">
+  <view class="basis-df">50%</view>
+  <view class="basis-df">50%</view>
+  <view class="basis-df">50%</view>
+</view>
+```
+
+常用组合 `flex-wrap` + `basis-*`/`w-*` 做流式标签、卡片流。
+
 ### 3.2 间距（margin / padding）
 
 方向：`top` `bottom` `left` `right` `lr`（左右）`tb`（上下），或省略（四周）。
@@ -463,7 +483,7 @@ numFw('5天到期')   // → '５天到期'，与 '次日到期' 精确同宽
 <view class="solid line-blue">蓝边框</view>
 ```
 
-色板同背景（`line-*`/`lines-*` 全套）。
+色板同背景（`line-*`/`lines-*` 全套）。`line-*` 只定义边框颜色（`::after` 的 `border-color`），需配合 `solid`/`solids`（提供边框形状）或 `cu-btn line-*`（线框按钮）使用——单独用没有边框。
 
 ### 11.3 语义色规范
 
