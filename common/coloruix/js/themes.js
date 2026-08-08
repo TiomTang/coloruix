@@ -76,6 +76,17 @@ export const themes = {
 		'--cu-shadow-card': '0 2rpx 8rpx rgba(0,0,0,.4), 0 8rpx 24rpx rgba(0,0,0,.5)',
 		'--cu-shadow-float': '0 4rpx 16rpx rgba(0,0,0,.5), 0 12rpx 40rpx rgba(0,0,0,.6)',
 	},
+	// 赛博科幻（霓虹辉光，X 新增——与 themes/_sci-fi.scss 的 .theme-sci-fi 值保持一致）
+	'sci-fi': {
+		'--cu-brand': '#00D4FF',
+		'--cu-brand-deep': '#0090C0',
+		'--cu-brand-soft': '#E0F9FF',
+		'--cu-shadow-card': '0 0 16rpx rgba(0,212,255,.18), 0 8rpx 24rpx rgba(0,212,255,.10)',
+		'--cu-shadow-float': '0 0 32rpx rgba(0,212,255,.28), 0 12rpx 40rpx rgba(0,212,255,.16)',
+		'--cu-radius-sm': '4rpx',
+		'--cu-radius-md': '8rpx',
+		'--cu-radius-lg': '12rpx',
+	},
 }
 
 export const defaultTheme = 'apple'

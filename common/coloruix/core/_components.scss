@@ -592,7 +592,7 @@ button.cuIcon.lg {
 }
 
 .cu-tag.badge:not([class*="bg-"]) {
-	background-color: #dd514c;
+	background-color: var(--cu-color-red);
 }
 
 .cu-tag:empty:not([class*="cuIcon-"]) {
@@ -804,7 +804,7 @@ button.cuIcon.lg {
 	margin: auto;
 	width: 260rpx;
 	height: 260rpx;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	border-radius: 10rpx;
 	box-shadow: 0 0 0rpx 2000rpx rgba(0, 0, 0, 0.5);
 	display: flex;
@@ -828,7 +828,7 @@ button.cuIcon.lg {
 .cu-load.load-modal::after {
 	content: "";
 	position: absolute;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	border-radius: 50%;
 	width: 200rpx;
 	height: 200rpx;
@@ -954,7 +954,7 @@ button.cuIcon.lg {
 	display: flex;
 	padding-right: 10rpx;
 	height: 140rpx;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	justify-content: flex-end;
 	align-items: center
 }
@@ -1018,7 +1018,7 @@ button.cuIcon.lg {
 	display: flex;
 	padding: 0 30rpx;
 	min-height: 100rpx;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	justify-content: space-between;
 	align-items: center
 }
@@ -1033,7 +1033,7 @@ button.cuIcon.lg {
 	box-sizing: border-box;
 	width: 200%;
 	height: 200%;
-	border-top: 1rpx solid #ddd;
+	border-top: 1rpx solid var(--cu-line);
 	border-radius: inherit;
 	content: " ";
 	transform: scale(.5);
@@ -1042,11 +1042,11 @@ button.cuIcon.lg {
 }
 
 .cu-list.menu>.cu-item.grayscale {
-	background-color: #f5f5f5
+	background-color: var(--cu-bg-sunken)
 }
 
 .cu-list.menu>.cu-item.cur {
-	background-color: #fcf7e9
+	background-color: var(--cu-warn-bg)
 }
 
 .cu-list.menu>.cu-item.arrow {
@@ -1138,8 +1138,8 @@ button.cuIcon.lg {
 	box-sizing: border-box;
 	width: 200%;
 	height: 200%;
-	border-right: 1px solid rgba(0, 0, 0, .1);
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	border-right: 1px solid var(--cu-line);
+	border-bottom: 1px solid var(--cu-line);
 	border-radius: inherit;
 	content: " ";
 	transform: scale(.5);
@@ -1168,7 +1168,7 @@ button.cuIcon.lg {
 }
 
 .cu-list.grid {
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	text-align: center
 }
 
@@ -1351,7 +1351,7 @@ button.cuIcon.lg {
 }
 
 .cu-bar .search-form {
-	background-color: #f5f5f5;
+	background-color: var(--cu-bg-sunken);
 	line-height: 64rpx;
 	height: 64rpx;
 	font-size: var(--cu-font-xs);
@@ -1684,7 +1684,7 @@ button.cuIcon.lg {
 
 .cu-timeline {
 	display: block;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 }
 
 .cu-timeline .cu-time {
@@ -1702,7 +1702,7 @@ button.cuIcon.lg {
 }
 
 .cu-timeline>.cu-item:not([class*="text-"]) {
-	color: #ccc;
+	color: var(--cu-text-hint);
 }
 
 .cu-timeline>.cu-item::after {
@@ -1710,7 +1710,7 @@ button.cuIcon.lg {
 	display: block;
 	position: absolute;
 	width: 1rpx;
-	background-color: #ddd;
+	background-color: var(--cu-line);
 	left: 60rpx;
 	height: 100%;
 	top: 0;
@@ -1806,7 +1806,7 @@ button.cuIcon.lg {
 }
 
 .cu-chat .cu-item>.main .content:not([class*="bg-"]) {
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	color: var(--cu-text-main);
 }
 
@@ -1896,11 +1896,12 @@ button.cuIcon.lg {
 .cu-card {
 	display: block;
 	overflow: hidden;
+	background-color: var(--cu-bg-card);
 }
 
 .cu-card>.cu-item {
 	display: block;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	overflow: hidden;
 	border-radius: 10rpx;
 	margin: 30rpx;
@@ -1953,7 +1954,7 @@ button.cuIcon.lg {
 
 .cu-card.dynamic>.cu-item {
 	display: block;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	overflow: hidden;
 }
 
@@ -2289,7 +2290,7 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active::after {
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	background-color: #ffffff;
+	background-color: var(--cu-bg-card);
 	border-radius: 20rpx;
 }
 
@@ -2427,7 +2428,7 @@ scroll-view.cu-steps .cu-item {
    改用 + 相邻选择器表达"第二项起"） */
 .cu-steps .cu-item+.cu-item::before,
 .cu-steps .cu-item+.cu-item::after {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid var(--cu-line);
 }
 
 .cu-steps.steps-arrow .cu-item+.cu-item::before,
@@ -2440,7 +2441,7 @@ scroll-view.cu-steps .cu-item {
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	color: #ccc;
+	color: var(--cu-text-hint);
 }
 
 .cu-steps.steps-bottom .cu-item::before,
@@ -2579,7 +2580,7 @@ scroll-view.cu-steps .cu-item {
 
 .line-gray::after,
 .lines-gray::after {
-	border-color: #aaaaaa;
+	border-color: var(--cu-line-strong);
 }
 
 .line-black::after,
@@ -2667,6 +2668,11 @@ scroll-view.cu-steps .cu-item {
 	color: var(--cu-text-sub);
 }
 
+/* 页面底色（X 新增：与 page 背景一致，供组件根节点等需要显式着色的场景使用） */
+.bg-page {
+	background-color: var(--cu-bg-page);
+}
+
 .bg-shadeTop {
 	background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.01));
 	color: #ffffff;
@@ -2679,7 +2685,7 @@ scroll-view.cu-steps .cu-item {
 
 .bg-red.light {
 	color: var(--cu-color-red);
-	background-color: #fadbd9;
+	background-color: var(--cu-danger-bg);
 }
 
 .bg-orange.light {
@@ -2689,7 +2695,7 @@ scroll-view.cu-steps .cu-item {
 
 .bg-yellow.light {
 	color: var(--cu-color-yellow);
-	background-color: #fef2ced2;
+	background-color: var(--cu-warn-bg);
 }
 
 .bg-olive.light {
@@ -2699,7 +2705,7 @@ scroll-view.cu-steps .cu-item {
 
 .bg-green.light {
 	color: var(--cu-color-green);
-	background-color: #d7f0dbff;
+	background-color: var(--cu-ok-bg);
 }
 
 .bg-cyan.light {
