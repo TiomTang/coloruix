@@ -3,8 +3,10 @@
 /* ==================
         初始化
  ==================== */
+/* page 不设 CSS 背景——page 元素取不到组件内注入的主题变量（微信样式隔离），
+   固定默认值会导致 dark 等主题下滚动露出白底；窗口背景由 app-page 的
+   uni.setBackgroundColor 统一设置（含滚动回弹区） */
 page {
-	background-color: var(--cu-bg-page);
 	font-size: var(--cu-font-sm);
 	color: var(--cu-text-main);
 	font-family: Helvetica Neue, Helvetica, sans-serif;
