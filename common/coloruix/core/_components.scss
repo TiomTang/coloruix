@@ -1897,6 +1897,8 @@ button.cuIcon.lg {
 	display: block;
 	overflow: hidden;
 	background-color: var(--cu-bg-card);
+	/* 卡片边界（dark 主题下 bg-card 与 bg-page 差异小，边框提升层级；light 下淡灰线无感） */
+	border: 1rpx solid var(--cu-line);
 }
 
 .cu-card>.cu-item {

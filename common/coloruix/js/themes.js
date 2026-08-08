@@ -61,7 +61,7 @@ export const themes = {
 		'--cu-warning': '#FFB020',
 		'--cu-text-main': '#E6EBF5',
 		'--cu-text-sub': '#9AA7C0',
-		'--cu-text-hint': '#66748F',
+		'--cu-text-hint': '#8A97B5',
 		'--cu-bg-page': '#0F1626',
 		'--cu-bg-card': '#1A2336',
 		'--cu-bg-sunken': '#131B2C',
