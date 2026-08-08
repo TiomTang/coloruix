@@ -50,7 +50,8 @@ $cu-black: #333333;
 $cu-white: #ffffff;
 
 // ---------- 色板 map（bg-*/text-* 工具类生成用） ----------
-// 注意：blue 映射到 $cu-brand（品牌色），不是 ColorUI 原始蓝
+// X 变更：blue 独立于品牌色——用固定标准蓝 #4A9BD9（与当前品牌色同值但解耦，
+// 换肤时 --cu-brand 变化不影响 blue 工具类；用户可能只想要标准蓝）
 $cu-color-map: (
   'red': $cu-red,
   'orange': $cu-orange,
@@ -58,7 +59,7 @@ $cu-color-map: (
   'olive': $cu-olive,
   'green': $cu-green,
   'cyan': $cu-cyan,
-  'blue': $cu-brand,
+  'blue': #4A9BD9,
   'purple': $cu-purple,
   'mauve': $cu-mauve,
   'pink': $cu-pink,

@@ -2626,7 +2626,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .bg-blue {
-	background-color: var(--cu-brand);
+	background-color: var(--cu-color-blue);
 	color: #ffffff;
 }
 
@@ -2716,8 +2716,8 @@ scroll-view.cu-steps .cu-item {
 }
 
 .bg-blue.light {
-	color: var(--cu-brand);
-	background-color: var(--cu-brand-soft);
+	color: var(--cu-color-blue);
+	background-color: var(--cu-color-blue-soft);
 }
 
 .bg-purple.light {
@@ -2771,7 +2771,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .bg-gradual-blue {
-	background-image: linear-gradient(45deg, var(--cu-brand), var(--cu-color-cyan));
+	background-image: linear-gradient(45deg, var(--cu-color-blue), var(--cu-color-cyan));
 	color: #ffffff;
 }
 
@@ -3022,6 +3022,7 @@ scroll-view.cu-steps .cu-item {
 .text-expense { color: var(--cu-expense); }
 .text-warning { color: var(--cu-warning); }
 .text-brand { color: var(--cu-brand); }
+.text-blue { color: var(--cu-color-blue); }
 .text-sub { color: var(--cu-text-sub); }
 .text-hint { color: var(--cu-text-hint); }
 

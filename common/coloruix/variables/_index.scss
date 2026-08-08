@@ -36,6 +36,8 @@ page {
   --cu-ok-bg: #{$cu-ok-bg};
   --cu-danger-bg: #{$cu-danger-bg};
   --cu-warn-bg: #{$cu-warn-bg};
+  // 色板浅底（X 新增：bg-blue.light 用——与品牌浅底解耦，随标准蓝）
+  --cu-color-blue-soft: rgba(74, 155, 217, 0.12);
 
   // ColorUI 兼容色板
   @each $name, $val in $cu-color-map {
